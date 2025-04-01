@@ -1,5 +1,6 @@
 import { MessageCircle, User } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { useTheme } from "next-themes"
 
 interface ChatMessageProps {
   role: "user" | "assistant"
@@ -7,7 +8,14 @@ interface ChatMessageProps {
 }
 
 export default function ChatMessage({ role, content }: ChatMessageProps) {
+  const { theme } = useTheme()
   const isUser = role === "user"
+
+  // Define background colors based on theme
+  const bgColor = theme === "dark" ? (isUser ? "bg-gray-800" : "bg-gray-600") : (isUser ? "bg-soft-slate" : "bg-mint-accent")
+  const textColor = theme === "dark" ? (isUser ? "text-white" : "text-gray-200") : (isUser ? "text-gray-900" : "text-deep-navy")
+  const avatarColor = theme === "dark" ? "bg-gray-700" : "bg-soft-slate/20"
+  const avatarIconColor = theme === "dark" ? "text-gray-300" : "text-soft-slate"
 
   return (
     <div
@@ -16,15 +24,15 @@ export default function ChatMessage({ role, content }: ChatMessageProps) {
     >
       <div className="flex items-start max-w-[80%] md:max-w-[70%]">
         {!isUser && (
-          <div className="mr-2 mt-1 flex-shrink-0 rounded-full bg-mint-accent/20 p-1">
-            <MessageCircle size={18} className="text-mint-accent" />
+          <div className={cn("mr-2 mt-1 flex-shrink-0 rounded-full p-1", avatarColor)}>
+            <MessageCircle size={18} className={avatarIconColor} />
           </div>
         )}
 
         <div
           className={cn(
             "px-4 py-3 rounded-lg shadow-sm",
-            isUser ? "bg-soft-slate text-white rounded-tr-none" : "bg-mint-accent text-deep-navy rounded-tl-none",
+            isUser ? `${bgColor} ${textColor} rounded-tr-none` : `${bgColor} ${textColor} rounded-tl-none`
           )}
         >
           <p className="whitespace-pre-wrap">{content}</p>
@@ -34,12 +42,11 @@ export default function ChatMessage({ role, content }: ChatMessageProps) {
         </div>
 
         {isUser && (
-          <div className="ml-2 mt-1 flex-shrink-0 rounded-full bg-soft-slate/20 p-1">
-            <User size={18} className="text-soft-slate" />
+          <div className="ml-2 mt-1 flex-shrink-0 rounded-full p-1" style={{ backgroundColor: avatarColor }}>
+            <User size={18} className={avatarIconColor} />
           </div>
         )}
       </div>
     </div>
   )
 }
-

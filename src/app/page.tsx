@@ -17,7 +17,7 @@ export default function Home() {
           <h1 className="text-3xl font-bold">Welcome to AskAlma</h1>
 
           <p className="text-muted-foreground">
-            A minimalist, clean interface for conversing with AI. Get answers, ideas, and assistance in seconds.
+            AskAlma helps you quickly find answers and navigate the IIIT Delhi website with ease. Powered by advanced AI, it's your go-to assistant for discovering regulations, resources, and more.
           </p>
 
           <Link href="/chat" className="block">
@@ -30,9 +30,8 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-border p-4 text-center text-sm text-muted-foreground">
-        <p>© 2025 ChatGPT. All rights reserved.</p>
+        <p>© 2025 AskAlma. All rights reserved.</p>
       </footer>
     </div>
   )
 }
-

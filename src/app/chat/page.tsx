@@ -84,7 +84,7 @@ export default function ChatPage() {
       const botResponse: Message = {
         id: (Date.now() + 1).toString(),
         role: "assistant",
-        content: "This is a placeholder response. Replace with your actual chatbot integration."
+        content: "I'm here to help you with any questions or tasks related to IIIT Delhi. Let me know how I can assist!"
       }
       setMessages(prev => [...prev, botResponse])
       setIsLoading(false)
@@ -114,9 +114,9 @@ export default function ChatPage() {
           {messages.length === 0 && (
             <div className="flex items-center justify-center h-full">
               <div className="text-center max-w-md">
-                <h2 className="text-2xl font-bold mb-4">How can I help you today?</h2>
+                <h2 className="text-2xl font-bold mb-4">How can I assist you today?</h2>
                 <p className="text-muted-foreground">
-                  Ask me anything, from simple questions to complex problems. I'm here to assist.
+                  Ask me anything about IIIT Delhi's resources, regulations, or get guidance on navigating the website.
                 </p>
               </div>
             </div>
@@ -161,7 +161,7 @@ export default function ChatPage() {
             <Input
               value={input}
               onChange={handleInputChange}
-              placeholder="Message ChatGPT..."
+              placeholder="Ask your question here..."
               className="pr-12 py-6 bg-background border-muted"
             />
             <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">

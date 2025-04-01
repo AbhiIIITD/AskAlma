@@ -23,16 +23,16 @@ export default function Sidebar({ className }: SidebarProps) {
   }
 
   const pastConversations = [
-    "Fact Extraction Pipeline Setup",
-    "PM2 SPA 404 Fix",
-    "Fine-tuning SpanBERT Report",
-    "Tech Filtering and Spotlight",
-    "Multi-GPU Usage PyTorch",
-    "Convert Parquet to Dataset",
-    "Tech Landing Page Design",
-    "Redesign Office Landing Page",
-    "Service Card Styling",
-    "ReactJS Responsiveness Refactor",
+    "Website Navigation Assistance",
+    "Finding Regulations on IIIT Delhi Website",
+    "Chatbot Integration Strategy",
+    "Troubleshooting Web Scraping",
+    "Model Evaluation for AskAlma",
+    "Vector Database Setup",
+    "LLM Selection for AskAlma",
+    "User Experience Feedback on AskAlma",
+    "Optimizing Chatbot Responses",
+    "Deployment of AskAlma on IIIT Delhi Website"
   ]
 
   return (
@@ -93,4 +93,3 @@ export default function Sidebar({ className }: SidebarProps) {
     </>
   )
 }
-
