@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { MessageSquare, Settings, ArrowRight } from "lucide-react"
+import { MessageSquare, ArrowRight } from "lucide-react"
 import Navbar from "@/components/navbar"
 
 export default function Home() {
